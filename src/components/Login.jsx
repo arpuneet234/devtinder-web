@@ -12,6 +12,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const [email, setEmailId] = useState("puneet@gmail.com");
   const [password, setPassword] = useState("Puneet@123");
+  const [error, setError] = useState("");
 
   const handleLogin = async () => {
     console.log("handle Login");
@@ -28,7 +29,7 @@ const Login = () => {
       dispatch(addUser(res.data));
       navigate("/");
     } catch (err) {
-      console.log(err);
+      setError(err?.response?.data || "Error");
     }
   };
   return (
@@ -60,6 +61,7 @@ const Login = () => {
               />
             </fieldset>
           </div>
+          <p className="text-red-500 ">{error}</p>
           <div className="card-actions justify-end">
             <button className="btn btn-primary" onClick={handleLogin}>
               Login
