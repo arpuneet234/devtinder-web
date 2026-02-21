@@ -1,7 +1,7 @@
 import React from "react";
 
 const UserCard = ({ user }) => {
-  const { photoUrl, firstName, lastName, age, about } = user;
+  const { photoUrl, firstName, lastName, age, about, gender } = user;
   return (
     <div>
       <div className="card bg-base-300 w-96 shadow-sm">
@@ -10,7 +10,8 @@ const UserCard = ({ user }) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">{firstName + " " + lastName}</h2>
-
+          <p>{age}</p>
+          <p>{gender}</p>
           <p>{about}</p>
           <div className="card-actions justify-end">
             <button className="btn btn-primary">IGNORE</button>
