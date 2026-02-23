@@ -17,7 +17,7 @@ const NavBar = () => {
     } catch (err) {}
   };
   return (
-    <div className="navbar bg-base-300 shadow-sm">
+    <div className="navbar sticky top-0 z-50 bg-base-300 shadow-sm">
       <div className="flex-1">
         <Link to="/" className="btn btn-ghost text-xl">
           DevTinder
@@ -27,7 +27,9 @@ const NavBar = () => {
         <div className="dropdown dropdown-end mx-5">
           {user && (
             <div className="flex items-center">
-              <div className="mx-2">Welcome {user.firstName}</div>
+              <div className="mx-2">
+                Welcome , {user.firstName + " " + user.lastName}
+              </div>
               <div
                 tabIndex={0}
                 role="button"
