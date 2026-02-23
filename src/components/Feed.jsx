@@ -21,6 +21,15 @@ const Feed = () => {
   useEffect(() => {
     getFeed();
   }, []);
+  if (!feed) return;
+  if (feed.length <= 0)
+    return (
+      <div className="text-center my-20">
+        <h2 className="text-2xl font-bold text-gray-500">
+          No More Users Found
+        </h2>
+      </div>
+    );
 
   return (
     feed && (
