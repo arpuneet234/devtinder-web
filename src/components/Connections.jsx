@@ -3,6 +3,7 @@ import { BASE_URL } from "../utils/constants";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { addConnection } from "../utils/connectionSlice";
+import { Link } from "react-router-dom";
 
 const Connections = () => {
   const connections = useSelector((store) => store.connections);
@@ -92,10 +93,11 @@ const Connections = () => {
 
               {/* Action Buttons */}
               <div className="card-actions justify-end mt-4">
-                <button className="btn btn-sm btn-outline btn-primary">
-                  View Profile
-                </button>
-                <button className="btn btn-sm btn-primary">Message</button>
+                <Link to={"/chat/" + connection._id}>
+                  <button className="btn btn-sm btn-primary cursor-pointer">
+                    Message
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
